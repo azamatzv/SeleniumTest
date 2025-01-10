@@ -1,4 +1,5 @@
-﻿/*using OpenQA.Selenium;
+﻿#region version 1
+/*using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
 namespace SeleniumTest;
@@ -105,7 +106,7 @@ public class Program
         }
     }
 }*/
-
+#endregion
 
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -125,7 +126,7 @@ public class Program
 
         try
         {
-            int page = 311; //311  dan boshlab qo'shaman
+            int page = 441; //441  dan boshlab qo'shaman
             bool hasNextPage = true;
 
             while (hasNextPage)
@@ -135,7 +136,6 @@ public class Program
                 driver.Navigate().GoToUrl(url);
                 driver.Manage().Window.Maximize();
 
-                // Maqolalarni olish
                 var articles = driver.FindElements(By.XPath("//*[@id='dle-content']/article"));
                 if (articles.Count == 0)
                 {
@@ -153,7 +153,6 @@ public class Program
                     }
                 }
 
-                // Har bir film uchun ma'lumot olish
                 foreach (var filmUrl in filmUrls)
                 {
                     driver.Navigate().GoToUrl(filmUrl);
